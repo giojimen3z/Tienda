@@ -2,7 +2,6 @@
 
 	<form method="post" action="">
 		
-<<<<<<< HEAD
 		<input type="text" placeholder="Usuario" name="usuarioIngreso" required>
 
 		<input type="password" placeholder="Contraseña" name="passwordIngreso" required>
@@ -27,12 +26,3 @@ if (isset($_GET['action'])) {
 
 
 ?>
-=======
-		<input type="text" placeholder="Usuario" name="usuario" required>
-
-		<input type="password" placeholder="Contraseña" name="password" required>
-
-		<input type="submit" value="Enviar">
-
-	</form>
->>>>>>> fb02ca8327b35184c1711f575a10c1047fb6c121
