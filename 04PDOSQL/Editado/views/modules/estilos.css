@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+header{
+    position:relative;
+    margin:auto;
+    text-align:center;
+    padding:5px;	
+}
+
+>>>>>>> fb02ca8327b35184c1711f575a10c1047fb6c121
 nav{
     position:relative;
     margin:auto;
@@ -26,6 +36,7 @@ nav ul li a{
 }
 
 section{
+<<<<<<< HEAD
     position: relative;
     margin: auto;
     width:400px;
@@ -72,3 +83,8 @@ table thead tr th{
 table tbody tr td{
     padding:10px;
 }
+=======
+    position:relative;
+    padding:20px;
+}
+>>>>>>> fb02ca8327b35184c1711f575a10c1047fb6c121

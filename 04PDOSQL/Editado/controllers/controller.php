@@ -37,6 +37,7 @@ class MvcController{
 
 	public function registrousuariocontroller(){
 
+<<<<<<< HEAD
 		if (isset($_POST["usuarioRegistro"])){
 			$datoscontroller = array("usuario"=>$_POST["usuarioRegistro"],
 							"password"=>$_POST["passwordRegistro"],
@@ -79,6 +80,16 @@ class MvcController{
 			}
 		}
 
+=======
+		$datoscontroller = array("usuario"=>$_POST["usuario"],
+						"password"=>$_POST["password"],
+						"email"=>$_POST["email"]);
+		
+		
+		$respuesta = Datos :: registroUsuraioModel($datoscontroller, "usuarios");
+
+		echo $respuesta;
+>>>>>>> fb02ca8327b35184c1711f575a10c1047fb6c121
 	}
 }
 

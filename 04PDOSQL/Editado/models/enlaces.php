@@ -16,6 +16,7 @@ class Paginas{
 			$module =  "views/modules/registro.php";
 		
 		}
+<<<<<<< HEAD
 		
 		else if($enlaces == "ok"){
 
@@ -28,6 +29,8 @@ class Paginas{
 			$module =  "views/modules/ingresar.php";
 		
 		}
+=======
+>>>>>>> fb02ca8327b35184c1711f575a10c1047fb6c121
 
 		else{
 

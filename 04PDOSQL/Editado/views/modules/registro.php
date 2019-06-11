@@ -2,11 +2,19 @@
 
 <form method="post">
 	
+<<<<<<< HEAD
 	<input type="text" placeholder="Usuario" name="usuarioRegistro" required>
 
 	<input type="password" placeholder="Contraseña" name="passwordRegistro" required>
 
 	<input type="email" placeholder="Email" name="emailRegistro" required>
+=======
+	<input type="text" placeholder="Usuario" name="usuario" required>
+
+	<input type="password" placeholder="Contraseña" name="password" required>
+
+	<input type="email" placeholder="Email" name="email" required>
+>>>>>>> fb02ca8327b35184c1711f575a10c1047fb6c121
 
 	<input type="submit" value="Enviar">
 
@@ -17,6 +25,7 @@ $registro = new MvcController();
 
 $registro -> registrousuariocontroller();
 
+<<<<<<< HEAD
 if (isset($_GET['action'])) {
 	
 	 if($_GET['action'] == "ok"){
@@ -25,4 +34,6 @@ if (isset($_GET['action'])) {
 	 }
 }
 
+=======
+>>>>>>> fb02ca8327b35184c1711f575a10c1047fb6c121
 ?>
