@@ -48,6 +48,7 @@ class Datos extends conexion{
             return "error";
         }
 
+        $stmt->close();
     }
 #INGRESO USUARIOS
 #----------------------------------------
@@ -61,8 +62,83 @@ public function ingresoUsuraioModel($datosModel, $tabla){
     #fetch(): Obtiene una fila de un conjunto de resultados  asociado al  objetoPDOSStatement
 
     return  $stmt->fetch();
+
+    $stmt->close();
+}
+#VISTA USUARIOS
+#----------------------------------------
+public function vistaUsuariosModel($tabla){
+
+    $stmt = Conexion::conectar()->prepare("SELECT  id,usuario, password,email FROM $tabla");
+    $stmt->execute();
+
+    #fetchAll(): Obtiene todas las filas de un conjunto de resultados  asociado al  objetoPDOSStatement
+    
+
+    return  $stmt->fetchAll();
+    $stmt->close();
 }
 
+#EDITAR USUARIOS
+#----------------------------------------
+public function editarusuarioModel($datosModel,$tabla){
+
+    $stmt = Conexion::conectar()->prepare("SELECT  id,usuario, password,email FROM $tabla  WHERE id = :id ");
+    $stmt->bindParam(":id",$datosModel, PDO::PARAM_STR);
+    $stmt->execute();
+
+    
+
+    return  $stmt->fetch();
+
+    $stmt->close();
+}
+
+
+#Actualizar USUARIOS
+#----------------------------------------
+public function actualizarUsuraioModel($datosModel,$tabla){
+
+    $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET usuario = :usuario, password = :password, email = :email WHERE id = :id");
+    
+    $stmt->bindParam(":id",$datosModel["id"], PDO::PARAM_INT);
+    $stmt->bindParam(":usuario",$datosModel["usuario"], PDO::PARAM_STR);
+    $stmt->bindParam(":password",$datosModel["password"], PDO::PARAM_STR);
+    $stmt->bindParam(":email",$datosModel["email"], PDO::PARAM_STR);
+    
+
+    if($stmt->execute()) {
+
+        return "Success";
+    }    
+    else   { 
+        return "error";
+    }
+
+    $stmt->close();
+
+
+
+}
+
+public function BorrarUsuarioModel($datosModel,$tabla){
+
+    $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE  id = :id");    
+
+    $stmt->bindParam(":id",$datosModel, PDO::PARAM_INT);
+
+
+    if($stmt->execute()) {
+
+        return "Success";
+    }    
+    else   { 
+        return "error";
+    }
+
+    $stmt->close();
+
+}
 
 }
 
