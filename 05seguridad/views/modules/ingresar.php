@@ -1,10 +1,10 @@
 <h1>INGRESAR</h1>
 
-	<form method="post" action="">
+	<form method="post" onsubmit="return ValidarIngreso()">
 		
-		<input type="text" placeholder="Usuario" name="usuarioIngreso" required>
+		<input type="text" placeholder="Usuario" maxlength="6" name="usuarioIngreso" id="usuarioIngreso" required>
 
-		<input type="password" placeholder="Contraseña" name="passwordIngreso" required>
+		<input type="password" placeholder="Contraseña" name="passwordIngreso" id="passwordIngreso" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
 
 		<input type="submit" value="Enviar">
 

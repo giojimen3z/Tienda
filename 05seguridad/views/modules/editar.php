@@ -9,7 +9,7 @@ if (!$_SESSION["validar"]) {
 ?>
 <h1>EDITAR USUARIO</h1>
 
-<form method="post">
+<form method="post" onsubmit="return ValidarCambio()">
 	<?php
 
 		$editarUsuario  = new MvcController();
