@@ -6,6 +6,8 @@
 
 	<link rel="stylesheet" type="text/css" href="views/modules/estilos.css">  	
 	<script src="views/js/ValidarRegistro.js"></script>
+	<script src="views/js/ValidarIngreso.js"></script>
+	<script src="views/js/ValidarCambio.js"></script>
 </head>
 
 <body>
