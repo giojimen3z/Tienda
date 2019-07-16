@@ -38,21 +38,34 @@ class MvcController{
 	public function registrousuariocontroller(){
 
 		if (isset($_POST["usuarioRegistro"])){
-			$datoscontroller = array("usuario"=>$_POST["usuarioRegistro"],
-							"password"=>$_POST["passwordRegistro"],
-							"email"=>$_POST["emailRegistro"]);
-			
-			
-			$respuesta = Datos::registroUsuraioModel($datoscontroller, "usuarios");
 
-			if ($respuesta == "Success") {
-				
-				header("location:index.php?action=ok");
-			}
-			else{
+				/*preg_matc = Realiza una comparacion con una expresion regular  
+				  
+				*/
+			if(preg_match('/^[a-zA-Z0-9]+$/',$_POST["usuarioRegistro"]) && 
+			   preg_match('/^[a-zA-Z0-9]+$/',$_POST["passwordRegistro"]) &&
+			   preg_match('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/',$_POST["emailRegistro"])){
 
-				header("location:index.php");
+					/*crypt() devolverá el hash de un string utilizando el algoritmo estándar basado en DES de Unix o algoritmos alternativos que puedan estar disponibles en el sistema. */
 
+				$encriptar = crypt($_POST["passwordRegistro"],'$2a$07$usesomesillystringforsalt$');
+
+					$datoscontroller = array("usuario"=>$_POST["usuarioRegistro"],
+									"password"=>$encriptar,
+									"email"=>$_POST["emailRegistro"]);
+					
+					
+					$respuesta = Datos::registroUsuraioModel($datoscontroller, "usuarios");
+
+					if ($respuesta == "Success") {
+						
+						header("location:index.php?action=ok");
+					}
+					else{
+
+						header("location:index.php");
+
+					}
 			}
 		}
 	}
@@ -63,26 +76,33 @@ class MvcController{
 	public function ingresoUsuarioController(){
 
 		if (isset($_POST["usuarioIngreso"])){
-			$datoscontroller = array("usuario"=>$_POST["usuarioIngreso"],
-							"password"=>$_POST["passwordIngreso"]);
 
-			$respuesta = Datos::ingresoUsuraioModel($datoscontroller,"usuarios");
-			
-			if ($respuesta["usuario"]== $_POST["usuarioIngreso"] && 
-			$respuesta["password"]== $_POST["passwordIngreso"] ) {
-			 session_start();	
-			 $_SESSION["validar"] = true;
-			 header("location:index.php?action=usuarios");	
-			 
+			if(preg_match('/^[a-zA-Z0-9]+$/',$_POST["usuarioIngreso"]) && 
+					preg_match('/^[a-zA-Z0-9]+$/',$_POST["passwordIngreso"])){
+					
+						
+					$encriptar = crypt($_POST["passwordIngreso"],'$2a$07$usesomesillystringforsalt$');
 
+					$datoscontroller = array("usuario"=>$_POST["usuarioIngreso"],
+									"password"=>$encriptar);
+
+					$respuesta = Datos::ingresoUsuraioModel($datoscontroller,"usuarios");
+					
+					if ($respuesta["usuario"]== $_POST["usuarioIngreso"] && 
+					$respuesta["password"]== $encriptar ) {
+					session_start();	
+					$_SESSION["validar"] = true;
+					header("location:index.php?action=usuarios");	
+					
+
+					}
+					else{
+
+						header("location:index.php?action=fallo");	
+
+					}
+				}
 			}
-			else{
-
-				header("location:index.php?action=fallo");	
-
-			}
-		}
-
 	}
 
 		#Vista de usuarios
@@ -132,19 +152,28 @@ class MvcController{
 	public function actualizarusuarioController(){
 
 		if (isset($_POST["usuarioEditar"])) {
-			
-			$datoscontroller = array("id"=>$_POST["idEditar"],
-							"usuario"=>$_POST["usuarioEditar"],
-							"password"=>$_POST["passwordEditar"],
-							"email"=>$_POST["emailEditar"]);
 
-			$respuesta = Datos::actualizarUsuraioModel($datoscontroller, "usuarios");
-			
-			if ($respuesta == "Success") {
-				header("location:index.php?action=cambio");
-			}
-			else{
-				echo "error";
+			if(preg_match('/^[a-zA-Z0-9]+$/',$_POST["usuarioEditar"]) && 
+			preg_match('/^[a-zA-Z0-9]+$/',$_POST["passwordEditar"]) &&
+			preg_match('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/',$_POST["emailEditar"])){
+
+
+					$encriptar = crypt($_POST["passwordEditar"],'$2a$07$usesomesillystringforsalt$');
+
+
+					$datoscontroller = array("id"=>$_POST["idEditar"],
+									"usuario"=>$_POST["usuarioEditar"],
+									"password"=>$encriptar,
+									"email"=>$_POST["emailEditar"]);
+
+					$respuesta = Datos::actualizarUsuraioModel($datoscontroller, "usuarios");
+					
+					if ($respuesta == "Success") {
+						header("location:index.php?action=cambio");
+					}
+					else{
+						echo "error";
+					}
 			}
 		}		
 
