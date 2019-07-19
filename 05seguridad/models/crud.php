@@ -54,7 +54,11 @@ class Datos extends conexion{
 #----------------------------------------
 public function ingresoUsuraioModel($datosModel, $tabla){
 
+<<<<<<< HEAD
     $stmt = Conexion::conectar()->prepare("SELECT  usuario, password, intentos FROM $tabla WHERE usuario = :usuario");
+=======
+    $stmt = Conexion::conectar()->prepare("SELECT  usuario, password FROM $tabla WHERE usuario = :usuario");
+>>>>>>> dbf1059f086cdf6e3795f9951f0b4fff723c0581
     $stmt->bindParam(":usuario",$datosModel["usuario"], PDO::PARAM_STR);
 
     $stmt->execute();
@@ -65,6 +69,7 @@ public function ingresoUsuraioModel($datosModel, $tabla){
 
     $stmt->close();
 }
+<<<<<<< HEAD
 
 #INTENTOS USUARIOS
 #----------------------------------------
@@ -87,6 +92,8 @@ public function intentosUsuariosModel($datosModel, $tabla){
     $stmt->close();
 }
 
+=======
+>>>>>>> dbf1059f086cdf6e3795f9951f0b4fff723c0581
 #VISTA USUARIOS
 #----------------------------------------
 public function vistaUsuariosModel($tabla){

@@ -28,11 +28,14 @@ class Paginas{
 			$module =  "views/modules/ingresar.php";
 		
 		}
+<<<<<<< HEAD
 		else if($enlaces == "fallointentos"){
 
 			$module =  "views/modules/ingresar.php";
 		
 		}		
+=======
+>>>>>>> dbf1059f086cdf6e3795f9951f0b4fff723c0581
 		else if($enlaces == "cambio"){
 
 			$module =  "views/modules/usuarios.php";

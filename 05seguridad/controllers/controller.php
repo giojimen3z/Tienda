@@ -88,6 +88,7 @@ class MvcController{
 
 					$respuesta = Datos::ingresoUsuraioModel($datoscontroller,"usuarios");
 					
+<<<<<<< HEAD
 					$intentos = $respuesta["intentos"];
 					$usuarios = $_POST["usuarioIngreso"];
 					$maximointentos = 2;	
@@ -130,6 +131,19 @@ class MvcController{
 						
 						header("location:index.php?action=fallointentos");	
 
+=======
+					if ($respuesta["usuario"]== $_POST["usuarioIngreso"] && 
+					$respuesta["password"]== $encriptar ) {
+					session_start();	
+					$_SESSION["validar"] = true;
+					header("location:index.php?action=usuarios");	
+					
+
+					}
+					else{
+
+						header("location:index.php?action=fallo");	
+>>>>>>> dbf1059f086cdf6e3795f9951f0b4fff723c0581
 
 					}
 				}

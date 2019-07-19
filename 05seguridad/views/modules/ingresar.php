@@ -25,6 +25,7 @@ if (isset($_GET['action'])) {
 }
 
 
+<<<<<<< HEAD
 if (isset($_GET['action'])) {
 	
 	if($_GET['action'] == "fallointentos"){
@@ -34,4 +35,6 @@ if (isset($_GET['action'])) {
 }
 
 
+=======
+>>>>>>> dbf1059f086cdf6e3795f9951f0b4fff723c0581
 ?>
