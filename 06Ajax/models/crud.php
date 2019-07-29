@@ -1,5 +1,5 @@
 <?php
-require_once "models/conexion.php";
+require_once "conexion.php";
 //require_once "../controller/controller.php";
 
 /*Extension de clases:  los objetos pueden 
