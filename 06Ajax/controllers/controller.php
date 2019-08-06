@@ -228,6 +228,7 @@ class MvcController{
 
 
 	}
+<<<<<<< HEAD
 
 	#VALIDAR USUARIO EXISTENTE
 	#===========================
@@ -275,5 +276,7 @@ class MvcController{
 
 
 	}
+=======
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
 }
 

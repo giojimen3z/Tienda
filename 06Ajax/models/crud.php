@@ -142,8 +142,12 @@ public function actualizarUsuraioModel($datosModel,$tabla){
 
 
 }
+<<<<<<< HEAD
 #Borrar USUARIOS
 #----------------------------------------
+=======
+
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
 public function BorrarUsuarioModel($datosModel,$tabla){
 
     $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE  id = :id");    
@@ -162,6 +166,7 @@ public function BorrarUsuarioModel($datosModel,$tabla){
     $stmt->close();
 
 }
+<<<<<<< HEAD
 #Validar  USUARIOS Existentes
 #----------------------------------------
 public function ValidarUsuarioModels($datosModel,$tabla){
@@ -191,6 +196,8 @@ public function validarEmailModels($datosModel,$tabla){
     $stmt->close();
  
 }
+=======
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
 
 }
 

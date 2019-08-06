@@ -6,6 +6,7 @@ require_once "../../models/crud.php";
 class Ajax{
 
     public $validarUsuario;
+<<<<<<< HEAD
     public $validarEmail;
     public function validarUsuariosAjax(){
 
@@ -37,3 +38,21 @@ if (isset($_POST["validarEmail"])){
     $b -> validarEmail = $_POST["validarEmail"];
     $b -> validaremailAjax();
 }
+=======
+
+    public function validaeUsuariosAjax(){
+
+        $datos = $this->validarUsuario;
+
+       # $respuesta = MvcController::validarUsuarioController($datos);
+        
+        echo $datos;
+    }
+
+
+
+}
+$a = new Ajax();
+$a -> validarUsuario = $_POST["validarUsuario"];
+$a -> validaeUsuariosAjax();
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b

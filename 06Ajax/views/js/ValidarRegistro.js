@@ -4,8 +4,11 @@
 ============================================
 */
 
+<<<<<<< HEAD
 var usuarioexistente = false;
 var emailexistente = false;
+=======
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
 $("#usuarioRegistro").change(function() {
 
     var usuario = $("#usuarioRegistro").val();
@@ -26,6 +29,7 @@ $("#usuarioRegistro").change(function() {
         processData: false,
         success: function(respuesta) {
 
+<<<<<<< HEAD
 			if(respuesta == 0){
 
 				$("label[for='usuarioRegistro'] span").html('<p>Este usuario ya existe en la base de datos</p>');
@@ -39,10 +43,14 @@ $("#usuarioRegistro").change(function() {
                 usuarioexistente = false;
 
 			}
+=======
+            console.log(respuesta);
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
         }
 
     });
 
+<<<<<<< HEAD
 });
 /*
 ============================================
@@ -98,6 +106,15 @@ $("#emailRegistro").change(function() {
 /*
 ============================================
       Fin  Validar Correo ajax
+=======
+
+
+
+});
+/*
+============================================
+      Fin  Validar usuario ajax
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
 ============================================
 */
 
@@ -137,12 +154,16 @@ function ValidarRegistro() {
             return false;
 
         }
+<<<<<<< HEAD
         
         if (usuarioexistente){
             document.querySelector("label[for='usuarioRegistro'] span").innerHTML = "<br/> <p>Este usuario ya existe en la base de datos</p>";
             return false;
 
         }
+=======
+
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
     }
 
     /*
@@ -186,12 +207,15 @@ function ValidarRegistro() {
             return false;
 
         }
+<<<<<<< HEAD
         if (emailexistente){
 
             document.querySelector("label[for='usuarioRegistro']").innerHTML = "<p>Este email ya existe en la base de datos</p> ";
             return false;
 
         }
+=======
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
 
     }
     /*

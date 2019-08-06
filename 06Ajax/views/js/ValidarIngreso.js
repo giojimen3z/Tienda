@@ -45,11 +45,19 @@ function ValidarIngreso(){
 
         var caracteres = password.length;
         var expresion =/^[a-zA-Z0-9]*$/;
+<<<<<<< HEAD
         /*if (caracteres < 6){
             
             document.querySelector("label[for='usuarioIngreso']").innerHTML += "<br/> Escriba por favor  menos de 6 caracteres" ;
             return false;
         }*/
+=======
+        if (caracteres < 6){
+            
+            document.querySelector("label[for='usuarioIngreso']").innerHTML += "<br/> Escriba por favor  menos de 6 caracteres" ;
+            return false;
+        }
+>>>>>>> b2c01f537c11db040b9113131562d67b4508f05b
         if (!expresion.test(password)){
 
             document.querySelector("label[for='usuarioIngreso']").innerHTML += "<br/> No ingrese Caracteres especiales" ;
